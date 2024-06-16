@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- Tìm sách theo tên -->
+    <category>
+        <pattern>Tôi muốn tìm cuốn sách <set>BookName</set></pattern>
+        <template>
+            <think><set name="book"><star/></set></think>
+            <condition name="book">
+                <li value="Nhà Giả Kim">
+                    <random>
+                        <li>Cuốn sách 'Nhà Giả Kim' của Paulo Coelho kể về hành trình của một chàng chăn cừu trẻ...</li>
+                        <li>'Nhà Giả Kim' là một trong những tác phẩm nổi tiếng nhất của Paulo Coelho...</li>
+                    </random>
+                </li>
+                <li value="Đắc Nhân Tâm">
+                    <random>
+                        <li>Cuốn sách 'Đắc Nhân Tâm' của Dale Carnegie là một hướng dẫn về nghệ thuật giao tiếp và ứng xử...</li>
+                        <li>'Đắc Nhân Tâm' đã giúp hàng triệu người cải thiện kỹ năng giao tiếp của mình...</li>
+                    </random>
+                </li>
+                <li>
+                    Xin lỗi, tôi không tìm thấy thông tin về cuốn sách này. Vui lòng thử lại.
+                </li>
+            </condition>
+        </template>
+    </category>
+
+    <!-- Tìm sách theo tác giả -->
+    <category>
+        <pattern>Có sách nào của <set>AuthorName</set> không?</pattern>
+        <template>
+            <think><set name="author"><star/></set></think>
+            <condition name="author">
+                <li value="Paulo Coelho">
+                    <random>
+                        <li>Dưới đây là các sách của Paulo Coelho: 'Nhà Giả Kim', 'Mười một phút'...</li>
+                        <li>Paulo Coelho là tác giả của 'Nhà Giả Kim', 'Mười một phút'...</li>
+                    </random>
+                </li>
+                <li value="Dale Carnegie">
+                    <random>
+                        <li>'Đắc Nhân Tâm' là một trong những tác phẩm nổi tiếng của Dale Carnegie về nghệ thuật giao tiếp...</li>
+                        <li>Các tác phẩm của Dale Carnegie bao gồm 'Đắc Nhân Tâm' và 'Làm giàu nhờ giao tiếp'...</li>
+                    </random>
+                </li>
+                <li>
+                    Tôi không có thông tin về sách của tác giả này. Vui lòng thử lại.
+                </li>
+            </condition>
+        </template>
+    </category>
+
+    <!-- Tìm sách theo nội dung -->
+    <category>
+        <pattern>Cuốn sách về <set>BookTopic</set> là gì?</pattern>
+        <template>
+            <think><set name="topic"><star/></set></think>
+            <condition name="topic">
+                <li value="nghệ thuật giao tiếp">
+                    <random>
+                        <li>'Đắc Nhân Tâm' của Dale Carnegie là một cuốn sách nổi tiếng về nghệ thuật giao tiếp và ứng xử...</li>
+                        <li>Cuốn sách về 'Đắc Nhân Tâm' dạy bạn cách nói chuyện và làm quen với mọi người...</li>
+                    </random>
+                </li>
+                <li value="hành trình">
+                    <random>
+                        <li>'Nhà Giả Kim' của Paulo Coelho kể về hành trình của một chàng chăn cừu trẻ đi tìm kiếm ước mơ...</li>
+                        <li>'Nhà Giả Kim' là câu chuyện về cuộc phiêu lưu tìm kiếm ý nghĩa cuộc sống của Santiago...</li>
+                    </random>
+                </li>
+                <li>
+                    Tôi không biết cuốn sách nào có liên quan đến chủ đề này. Vui lòng thử lại.
+                </li>
+            </condition>
+        </template>
+    </category>
+
+</aiml>
